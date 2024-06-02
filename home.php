@@ -1,0 +1,238 @@
+<?php 
+session_start();
+if(!isset($_SESSION['unique_id'])) {
+    header("location:login.php");
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleog.css">
+    <link rel="stylesheet" href="stylefeed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/48600096e7.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            overflow: visible;
+        }
+
+        .wrapper {
+            height: auto;
+            min-height: 40em;
+            border-radius: 50px 50px 0px 0px;
+            padding-right: 5.25em;
+            padding-top: 0;
+            padding-left: 5.25em;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="margin">
+    <nav>
+    <header>
+    <div class="above">
+    <img src="image.png" height="80px" width="150px" style="margin-right: 10em; margin-right: 2em; margin-top: 2.7em; float: right;" class="grow">
+    <ul class="ul-one">
+        <li class="li-word element" title="Create groups for united classwork">Home</li>
+        <a href="search.php"><li style="padding-left: 5em; margin-top: 2px;" class="li-one">
+        <svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.77879 24.79L8.07061 24.4209L7.77879 24.79C9.64904 26.2684 11.9157 27.1591 14.2921 27.3492C16.6685 27.5394 19.0479 27.0207 21.1296 25.8586L21.1296 25.8585C23.211 24.6963 24.9013 22.9431 25.9864 20.8203C27.0716 18.6975 27.5029 16.3008 27.2258 13.9329C26.8542 10.7577 25.2366 7.86012 22.7285 5.87767C20.2205 3.89521 17.0278 2.99023 13.8527 3.3618C11.4848 3.6389 9.25229 4.61193 7.43743 6.15784C5.62258 7.70373 4.30689 9.7531 3.65677 12.0467C3.00662 14.3404 3.05122 16.7752 3.78494 19.0436C4.51866 21.3119 5.90854 23.3117 7.77879 24.79ZM1.30277 14.2553L0.80436 14.2155L1.30277 14.2553C1.52365 11.4952 2.55804 8.86261 4.27513 6.69037C5.99222 4.51814 8.3149 2.90387 10.9494 2.05168L10.7955 1.57595L10.9494 2.05168C13.5839 1.1995 16.4121 1.14767 19.076 1.90279C21.74 2.65791 24.1204 4.18601 25.9158 6.29388C27.7113 8.40175 28.8414 10.9947 29.1633 13.7449C29.3769 15.5709 29.2288 17.4212 28.7275 19.19C28.2261 20.9589 27.3812 22.6116 26.2411 24.0539C25.1011 25.4962 23.6881 26.6999 22.0828 27.596C20.4774 28.4922 18.7113 29.0636 16.8854 29.2773C14.1352 29.5991 11.3514 29.0982 8.88588 27.8379C6.42041 26.5776 4.384 24.6144 3.03421 22.1967C1.68444 19.7791 1.08187 17.0154 1.30277 14.2553Z" fill="black" stroke="black"/>
+            <mask id="path-2-inside-1_0_1" fill="white">
+            <path d="M35.2136 32.9073C35.0204 32.9203 34.8265 32.8954 34.6433 32.8338C34.4602 32.7725 34.2914 32.6756 34.1471 32.549L25.5424 25.1017C25.2652 24.844 25.1008 24.4905 25.0838 24.1156C25.0668 23.7407 25.1988 23.3738 25.4516 23.0918C25.7044 22.81 26.0585 22.6353 26.4393 22.6047C26.82 22.574 27.1976 22.6897 27.4927 22.9274L36.0974 30.3748C36.3899 30.6283 36.5679 30.9859 36.5921 31.369C36.6163 31.7519 36.4848 32.129 36.2265 32.4176C36.0993 32.5613 35.944 32.6787 35.7701 32.7626C35.5962 32.8468 35.4069 32.8959 35.2136 32.9073Z"/>
+            </mask>
+            <path d="M35.2136 32.9073C35.0204 32.9203 34.8265 32.8954 34.6433 32.8338C34.4602 32.7725 34.2914 32.6756 34.1471 32.549L25.5424 25.1017C25.2652 24.844 25.1008 24.4905 25.0838 24.1156C25.0668 23.7407 25.1988 23.3738 25.4516 23.0918C25.7044 22.81 26.0585 22.6353 26.4393 22.6047C26.82 22.574 27.1976 22.6897 27.4927 22.9274L36.0974 30.3748C36.3899 30.6283 36.5679 30.9859 36.5921 31.369C36.6163 31.7519 36.4848 32.129 36.2265 32.4176C36.0993 32.5613 35.944 32.6787 35.7701 32.7626C35.5962 32.8468 35.4069 32.8959 35.2136 32.9073Z" fill="black"/>
+            <path d="M35.2136 32.9073L34.9181 27.916L34.8982 27.9172L34.8783 27.9186L35.2136 32.9073ZM34.6433 32.8338L36.2368 28.0945L36.2324 28.0931L34.6433 32.8338ZM34.1471 32.549L37.4436 28.7896L37.4315 28.779L37.4193 28.7684L34.1471 32.549ZM25.5424 25.1017L22.1388 28.7644L22.2035 28.8245L22.2703 28.8823L25.5424 25.1017ZM25.4516 23.0918L21.7295 19.7532L21.7283 19.7546L25.4516 23.0918ZM27.4927 22.9274L30.7648 19.1468L30.6981 19.0891L30.6294 19.0337L27.4927 22.9274ZM36.0974 30.3748L39.3722 26.5964L39.3695 26.5941L36.0974 30.3748ZM36.2265 32.4176L32.5009 29.083L32.4919 29.0931L32.4829 29.1031L36.2265 32.4176ZM35.7701 32.7626L33.5968 28.2596L33.5927 28.2616L35.7701 32.7626ZM34.8783 27.9186C35.334 27.8879 35.7955 27.9462 36.2368 28.0945L33.0499 37.5731C33.8574 37.8446 34.7069 37.9526 35.5489 37.8961L34.8783 27.9186ZM36.2324 28.0931C36.6742 28.2412 37.0866 28.4765 37.4436 28.7896L30.8507 36.3085C31.4963 36.8746 32.2463 37.3038 33.0543 37.5746L36.2324 28.0931ZM37.4193 28.7684L28.8145 21.321L22.2703 28.8823L30.875 36.3297L37.4193 28.7684ZM28.946 21.4389C29.6209 22.0661 30.0358 22.9429 30.0787 23.8891L20.089 24.3421C20.1659 26.038 20.9095 27.622 22.1388 28.7644L28.946 21.4389ZM30.0787 23.8891C30.1218 24.8393 29.7854 25.7479 29.1749 26.429L21.7283 19.7546C20.6123 20.9997 20.0119 22.6421 20.089 24.3421L30.0787 23.8891ZM29.1737 26.4304C28.5627 27.1116 27.7239 27.5174 26.8404 27.5886L26.0381 17.6208C24.3932 17.7532 22.8461 18.5084 21.7295 19.7532L29.1737 26.4304ZM26.8404 27.5886C25.9576 27.6596 25.0664 27.3935 24.3559 26.8211L30.6294 19.0337C29.3288 17.9859 27.6824 17.4885 26.0381 17.6208L26.8404 27.5886ZM24.2205 26.708L32.8253 34.1554L39.3695 26.5941L30.7648 19.1468L24.2205 26.708ZM32.8226 34.1531C32.1127 33.5378 31.6633 32.6524 31.6021 31.6844L41.5822 31.0536C41.4726 29.3193 40.6671 27.7188 39.3722 26.5964L32.8226 34.1531ZM31.6021 31.6844C31.5409 30.7155 31.8757 29.7814 32.5009 29.083L39.9522 35.7522C41.0938 34.4766 41.6918 32.7883 41.5822 31.0536L31.6021 31.6844ZM32.4829 29.1031C32.7977 28.7476 33.1772 28.4622 33.5968 28.2596L37.9434 37.2656C38.7109 36.8952 39.4009 36.375 39.9701 35.7321L32.4829 29.1031ZM33.5927 28.2616C34.0117 28.0589 34.4623 27.943 34.9181 27.916L35.5091 37.8986C36.3515 37.8487 37.1807 37.6346 37.9476 37.2636L33.5927 28.2616Z" fill="black" mask="url(#path-2-inside-1_0_1)"/>
+        </svg>
+        </li></a>
+        <a href="new_post.php"><li style="padding-left: 3em;" class="li-one">
+            <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 33.75C9.55988 33.75 2.3125 26.6963 2.3125 18C2.3125 9.30375 9.55988 2.25 18.5 2.25C27.4401 2.25 34.6875 9.30375 34.6875 18C34.6875 26.6963 27.4401 33.75 18.5 33.75ZM18.5 0C8.28222 0 0 8.055 0 18C0 27.945 8.28222 36 18.5 36C28.7178 36 37 27.945 37 18C37 8.055 28.7178 0 18.5 0ZM25.4375 16.875H19.6562V11.25C19.6562 10.6313 19.1394 10.125 18.5 10.125C17.8606 10.125 17.3438 10.6313 17.3438 11.25V16.875H11.5625C10.9231 16.875 10.4062 17.3813 10.4062 18C10.4062 18.6187 10.9231 19.125 11.5625 19.125H17.3438V24.75C17.3438 25.3687 17.8606 25.875 18.5 25.875C19.1394 25.875 19.6562 25.3687 19.6562 24.75V19.125H25.4375C26.0769 19.125 26.5938 18.6187 26.5938 18C26.5938 17.3813 26.0769 16.875 25.4375 16.875Z" fill="black"/>
+            </svg>
+        </li></a>
+        <a href="home.php"><li style="padding-left: 3em;" class="li-one">
+        <svg width="38" height="35" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.98648 10.1898C1.19209e-07 11.8497 0 13.8521 0 17.8568V20.5188C0 27.3451 2.38419e-07 30.7585 2.22598 32.8792C4.45199 35 8.03464 35 15.2 35H22.8C29.9653 35 33.5481 35 35.774 32.8792C38 30.7585 38 27.3451 38 20.5188V17.8568C38 13.8521 38 11.8497 37.0135 10.1898C36.027 8.52987 34.2249 7.49964 30.6204 5.43921L26.8204 3.26702C23.0101 1.08901 21.105 0 19 0C16.895 0 14.9898 1.08901 11.1797 3.26702L7.37966 5.43923C3.7752 7.49964 1.97296 8.52987 0.98648 10.1898ZM13.3 26.6875C12.513 26.6875 11.875 27.2752 11.875 28C11.875 28.7248 12.513 29.3125 13.3 29.3125H24.7C25.487 29.3125 26.125 28.7248 26.125 28C26.125 27.2752 25.487 26.6875 24.7 26.6875H13.3Z" fill="#007EFF"/>
+            <path d="M13.3 26.6875C12.513 26.6875 11.875 27.2752 11.875 28C11.875 28.7248 12.513 29.3125 13.3 29.3125H24.7C25.487 29.3125 26.125 28.7248 26.125 28C26.125 27.2752 25.487 26.6875 24.7 26.6875H13.3Z" fill="white"/>
+        </svg>
+        </li></a>
+        <a href="profile.php"><li style="padding-left: 3em;" class="li-one">
+            <svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.8312 31.2609C30.0922 28.0698 25.2078 26.2726 20.1204 26.2161C15.0331 26.1596 10.1034 27.8478 6.28264 30.9549L4.55371 29.1406C8.85915 25.6381 14.4146 23.7344 20.1481 23.797C25.8817 23.8595 31.387 25.8838 35.602 29.4793L33.8312 31.2609Z" fill="black"/>
+                <path d="M19.8719 10.586C21.1548 10.586 22.4089 10.9379 23.4757 11.5971C24.5424 12.2563 25.3738 13.1933 25.8648 14.2895C26.3557 15.3858 26.4842 16.5921 26.2339 17.7558C25.9836 18.9196 25.3658 19.9886 24.4586 20.8276C23.5515 21.6666 22.3957 22.238 21.1374 22.4695C19.8791 22.701 18.5749 22.5822 17.3896 22.1281C16.2043 21.674 15.1912 20.9051 14.4785 19.9185C13.7657 18.9319 13.3853 17.772 13.3853 16.5854C13.3874 14.9949 14.0714 13.47 15.2874 12.3453C16.5035 11.2206 18.1522 10.5879 19.8719 10.586ZM19.8719 8.1669C18.0716 8.1669 16.3118 8.66064 14.815 9.58568C13.3181 10.5107 12.1515 11.8255 11.4626 13.3638C10.7737 14.9021 10.5934 16.5947 10.9446 18.2278C11.2958 19.8608 12.1627 21.3608 13.4357 22.5382C14.7086 23.7155 16.3305 24.5173 18.0962 24.8421C19.8618 25.167 21.692 25.0003 23.3552 24.3631C25.0184 23.7259 26.44 22.6469 27.4401 21.2625C28.4403 19.8781 28.9741 18.2504 28.9741 16.5854C28.9741 14.3527 28.0151 12.2114 26.3081 10.6326C24.6011 9.05385 22.2859 8.1669 19.8719 8.1669Z" fill="black"/>
+                <path d="M20 2.41911C23.4383 2.41911 26.7994 3.36211 29.6583 5.12885C32.5172 6.89558 34.7454 9.40672 36.0611 12.3447C37.3769 15.2827 37.7212 18.5155 37.0504 21.6345C36.3796 24.7534 34.7239 27.6184 32.2926 29.867C29.8614 32.1156 26.7638 33.647 23.3915 34.2674C20.0193 34.8877 16.5238 34.5694 13.3473 33.3524C10.1707 32.1354 7.45561 30.0746 5.54538 27.4305C3.63516 24.7864 2.61555 21.6777 2.61555 18.4977C2.62074 14.2349 4.454 10.148 7.71308 7.13374C10.9722 4.11946 15.391 2.42391 20 2.41911ZM20 0C16.0444 0 12.1776 1.08489 8.88861 3.11744C5.59962 5.14999 3.03615 8.03893 1.5224 11.4189C0.00864593 14.799 -0.387394 18.5182 0.384311 22.1064C1.15602 25.6946 3.06083 28.9906 5.85788 31.5776C8.65493 34.1645 12.2186 35.9263 16.0982 36.64C19.9778 37.3537 23.9991 36.9874 27.6537 35.5873C31.3082 34.1873 34.4318 31.8164 36.6294 28.7745C38.827 25.7325 40 22.1562 40 18.4977C40 13.5918 37.8929 8.88684 34.1422 5.41785C30.3914 1.94886 25.3044 0 20 0Z" fill="black"/>
+            </svg>                    
+        </li>
+        <a href="users.php"><li style="padding-left: 3em;" class="li-one">
+        <svg width="40" height="37" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.8568 32.4804C9.14197 33.7394 6.13484 34.3162 3.12061 34.1562C2.60998 34.1562 2.07428 34.146 1.5314 34.1255C1.28439 34.1184 1.04441 34.0455 0.838599 33.915C0.632788 33.7846 0.469364 33.6019 0.366817 33.3875C0.260047 33.1753 0.217723 32.9388 0.244638 32.7048C0.271553 32.4708 0.366631 32.2487 0.519109 32.0635C2.18513 30.1572 3.44602 27.9598 4.23144 25.5941C2.3682 22.3993 1.65883 18.7089 2.2127 15.0917C2.76658 11.4745 4.55294 8.13152 7.29639 5.57806C10.0398 3.0246 13.588 1.40248 17.3939 0.961808C21.1997 0.521133 25.052 1.28637 28.3566 3.13953C31.6613 4.99269 34.2349 7.83087 35.6807 11.2165C37.1264 14.6021 37.364 18.3472 36.3569 21.8743C35.3498 25.4014 33.1538 28.5148 30.1075 30.7343C27.0612 32.9538 23.3339 34.1562 19.5 34.1562C16.8514 34.1626 14.2365 33.5892 11.8568 32.4804ZM12.4355 29.8854C15.5786 31.5157 19.2354 32.0031 22.7269 31.2571C26.2184 30.5112 29.3074 28.5826 31.4204 25.8293C33.5334 23.0761 34.5269 19.6853 34.2163 16.2865C33.9057 12.8878 32.3123 9.71189 29.7317 7.34857C27.1512 4.98525 23.7589 3.59506 20.1847 3.43608C16.6105 3.27711 13.0972 4.36017 10.2972 6.48417C7.49708 8.60817 5.60045 11.6288 4.9594 14.9853C4.31834 18.3417 4.97642 21.806 6.81144 24.7348C6.98415 25.0091 7.04295 25.3352 6.97628 25.6487C6.44266 27.7746 5.49386 29.7857 4.17948 31.5767C6.57176 31.6526 8.93903 31.0925 11.0165 29.9589C11.2424 29.8071 11.5123 29.7259 11.7887 29.7265C12.0148 29.7272 12.2372 29.7818 12.4355 29.8854ZM12.3334 22.1979C11.977 22.1979 11.6352 22.0629 11.3832 21.8226C11.1312 21.5824 10.9896 21.2565 10.9896 20.9167C10.9896 20.5768 11.1312 20.251 11.3832 20.0107C11.6352 19.7704 11.977 19.6354 12.3334 19.6354H24.875C25.2314 19.6354 25.5732 19.7704 25.8252 20.0107C26.0772 20.251 26.2188 20.5768 26.2188 20.9167C26.2188 21.2565 26.0772 21.5824 25.8252 21.8226C25.5732 22.0629 25.2314 22.1979 24.875 22.1979H12.3334ZM12.3334 15.3646C11.977 15.3646 11.6352 15.2296 11.3832 14.9893C11.1312 14.749 10.9896 14.4231 10.9896 14.0833C10.9896 13.7435 11.1312 13.4176 11.3832 13.1773C11.6352 12.9371 11.977 12.8021 12.3334 12.8021H21.2917C21.6481 12.8021 21.9899 12.9371 22.2419 13.1773C22.4939 13.4176 22.6354 13.7435 22.6354 14.0833C22.6354 14.4231 22.4939 14.749 22.2419 14.9893C21.9899 15.2296 21.6481 15.3646 21.2917 15.3646H12.3334Z" fill="#141124"/>
+        </svg>
+        </li></a>
+    </ul>
+    <div style="clear: both;"></div>
+    </div>
+    </header>
+</nav>
+</div>
+<div class="wrapper below">
+<div class="grid">
+    <div class="sidebar">
+        <ul class="tab">
+            <li><img src="image-favicon.png" alt="logo" width="81.33px" height="74.33px" style="border-radius: 0px;"></li>
+            <li><i class="fa fa-home"></i><button class="tablinks" onclick="openTab(event, 'Feed')" id="defaultOpen">Home</button></li>
+            <li><i class="fa fa-file-text"></i><button class="tablinks" onclick="openTab(event, 'Surveys')">Surveys</button></li>
+            <li><i class="fa fa-briefcase"></i><button class="tablinks" onclick="openTab(event, 'Work')">Work</button></li>
+            <li><i class="fa fa-bookmark"></i><button class="tablinks" onclick="openTab(event, 'Resources')">Resources</button></li>
+        </ul>
+    </div>
+    <div id="Feed" class="tabcontent element">
+        <div class="posts">
+            <div class="post">
+                <div class="profile-container">
+                    <div class="image-container">
+                    <img src="profile.png" alt="" style="width: 35px; height: 35px; border-radius: 50%;">
+                </div>
+                <div class="details-container">
+                    <span class="username" style="font-weight: 500;">Fake_User_1</span>
+                    <span class="username" style="font-weight: 500; color: #737373">· 1d ·</span>
+                    <span class="username" style="font-weight: 500; color: #737373">Year 10 ·</span>
+                    <span class="username" style="font-weight: 500;"><a href="users.php" class="messagepost">Message</a></span>
+                </div>
+                </div>
+                <div class="imagefield">
+                    <img src="photo.jpg" alt="" class="post-image" style="border-radius: 5px;">
+                </div>
+                <div class="captionarea">
+                    <div class="likes-container">
+                        <div class="likes">
+                            <button class="likebutton"><i class="fa fa-heart"></i></button>
+                            <span class="likes-count">201</span><br>
+                        </div>
+                    </div>
+                    <div class="caption-container">
+                        <div class="caption">
+                            <span class="caption-area" style="font-size: 10px;">Hello all year 12s, ready for this epic trip coming up!! #beach #sea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments">
+                    <span class="username commentspost">Comments</span>
+                    <span class="username" style="font-weight: 500; color: #737373">· 3</span>
+                </div>
+                <hr>
+            </div>
+            <div class="post">
+                <div class="profile-container">
+                    <div class="image-container">
+                    <img src="profile.png" alt="" style="width: 35px; height: 35px; border-radius: 50%;">
+                </div>
+                <div class="details-container">
+                    <span class="username" style="font-weight: 500;">Another_fake_user</span>
+                    <span class="username" style="font-weight: 500; color: #737373">· 3d ·</span>
+                    <span class="username" style="font-weight: 500; color: #737373">Year 9 ·</span>
+                    <span class="username" style="font-weight: 500;"><a href="users.php" class="messagepost">Message</a></span>
+                </div>
+                </div>
+                <div class="imagefield">
+                    <img src="mathpost.png" alt="" class="post-image" style="border-radius: 5px;">
+                </div>
+                <div class="captionarea">
+                    <div class="likes-container">
+                        <div class="likes">
+                            <button class="likebutton"><i class="fa fa-heart"></i></button>
+                            <span class="likes-count">25</span><br>
+                        </div>
+                    </div>
+                    <div class="caption-container">
+                        <div class="caption">
+                            <span class="caption-area" style="font-size: 10px;">In Maths here hehe!! #math</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments">
+                    <span class="username commentspost">Comments</span>
+                    <span class="username" style="font-weight: 500; color: #737373">· 6</span>
+                </div>
+                <hr>
+            </div>
+            <div class="post">
+                <div class="profile-container">
+                    <div class="image-container">
+                    <img src="profile.png" alt="" style="width: 35px; height: 35px; border-radius: 50%;">
+                </div>
+                <div class="details-container">
+                    <span class="username" style="font-weight: 500;">Fake_User_1</span>
+                    <span class="username" style="font-weight: 500; color: #737373">· 1d ·</span>
+                    <span class="username" style="font-weight: 500; color: #737373">Year 10 ·</span>
+                    <span class="username" style="font-weight: 500;"><a href="users.php" class="messagepost">Message</a></span>
+                </div>
+                </div>
+                <div class="imagefield">
+                    <img src="photo.jpg" alt="" class="post-image" style="border-radius: 5px;">
+                </div>
+                <div class="captionarea">
+                    <div class="likes-container">
+                        <div class="likes">
+                            <button class="likebutton"><i class="fa fa-heart"></i></button>
+                            <span class="likes-count">201</span><br>
+                        </div>
+                    </div>
+                    <div class="caption-container">
+                        <div class="caption">
+                            <span class="caption-area" style="font-size: 10px;">Hello all year 12s, ready for this epic trip coming up!! #beach #sea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments">
+                    <span class="username commentspost">Comments</span>
+                    <span class="username" style="font-weight: 500; color: #737373">· 3</span>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="petition">
+        <div class="right-sideborder">
+            <p>hellow world</p>
+        </div>
+    </div>
+</div>
+<div class="grids">
+    <div id="Surveys" class="tabcontent">
+        <h3>Surveys</h3>
+    </div>
+</div>
+
+    <div id="Work" class="tabcontent">
+        <h3>Work</h3>
+    </div>
+
+    <div id="Resources" class="tabcontent">
+        <h3>Resources</h3>
+    </div>
+    <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+    </script>
+</div>
+</body>
+</html>
