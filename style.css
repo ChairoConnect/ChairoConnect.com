@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: visible;
+    background-color: #f5f5f5;
+}
+
+.ul-one {
+    float: right; 
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    margin-top: 2.55em;
+    padding: 21px;
+    padding-right: 5%;
+    padding-left: 4em;
+    border-radius: 40px;
+    position: absolute;
+    margin-right: 10em;
+    display: flex;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.li-one {
+    transition: 0.2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.box {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+.information .bio span {
+    font-size: x-large;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.information .bio p {
+    font-size: small;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 30px;
+}
+
+.information .info span {
+    font-size: small;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.information .info p {
+    font-size: small;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    width: 20em;
+}
+
+.information .info p i{
+    margin-right: 10px;
+    padding-left: 7px;
+}
+
+.information .info p i{
+    margin-right: 10px;
+    padding-left: 7px;
+    transition: 0.2s;
+}
+
+.heart:hover{
+    color: red;
+}
+
+.home:hover{
+    color: rgb(0, 136, 255);
+}
+
+.calendar:hover{
+    color: rgb(255, 217, 0);
+}
+
+.cap:hover{
+    color: black;
+}
+
+.cake:hover{
+    color: black;
+}
+
+.usercirlce{
+    color: rgb(0, 255, 47);
+}
+
+.info .inputbox {
+    margin-left: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.2s;
+    padding-left: 10px;
+}
+
+.info .inputbox {
+    margin-left: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.2s;
+    padding-left: 10px;
+}
+
+.information .info .editbtn {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    transition: 0.2s;
+    width: 100px;
+}
+
+.information .info .editbtn:hover {
+    background-color: #007EFF;
+    color: white;
+    border: none;
+}
+
+.rightform {
+    margin-right: 23em;
+}
+
+.rightest {
+    float: right;
+}
+
+.element {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.searchbar {
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    padding-left: 10px;  
+    width: 20em; 
+    margin: 16px; 
+    margin-left: 0px; 
+    border-radius: 15px; 
+    border: 1px solid black;
+}
+
+.searchbar:focus {
+    border: 1px solid black;
+}
+
+.li-word {
+    font-family: 'Poppins', sans-serif;;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.container {
+    background-color: white;
+    margin: 10em;
+    margin-top: 3em;
+    height: 10em;
+    padding-right: 4.5em;
+    padding: 3.5em;
+    padding-left: 4.5em;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+    background: #fff;
+    width: 450px;
+    height: 10em;
+    border-radius: 16px;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    padding: 2em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    border-radius: 25px;
+    background-color: white;
+    transition: 0.2s;
+    margin-right: 2em;
+    font-size: 1em;
+}
+
+button:focus {
+    background-color: rgba(5, 121, 238, 0.26);
+}
+
+.tabcontent {
+    margin: 3.5em;
+    margin-left: 0.25em;
+}
+
+.grow {
+    transition: 0.5s;
+}
+
+.grow:hover {
+    transform: scale(1.02);
+}
+
+.gradient {
+    background: linear-gradient(#007EFF #ff00bf);
+}
